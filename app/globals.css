@@ -119,6 +119,13 @@
   .shape-leaf {
     border-radius: 7px 90px 7px 90px;
   }
+  /* Triangle border taken from the Little Seed, Mighty Tree book and mural. */
+  .zigzag {
+    @apply h-3;
+    background:
+      linear-gradient(135deg, var(--color-magenta-500) 33%, transparent 33%) 0 0 / 24px 12px repeat-x,
+      linear-gradient(225deg, var(--color-brand-purple) 33%, transparent 33%) 0 0 / 24px 12px repeat-x;
+  }
   .photo-frame {
     @apply pointer-events-none absolute inset-[15px_-13px_-13px_15px] -z-10 border-[1.5px] border-magenta-400;
   }

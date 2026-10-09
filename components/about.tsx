@@ -14,8 +14,9 @@ export function About() {
           <div className="shape-arch relative h-82.5 overflow-hidden md:h-102.5">
             <Image
               src={images.about}
-              alt="Stock photograph of a welcoming interior"
+              alt="Blossom therapy room with a red sofa, armchair and sunflowers by the window"
               fill
+              placeholder="blur"
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover saturate-[.86] transition duration-500 group-hover:scale-[1.018] group-hover:saturate-100"
             />

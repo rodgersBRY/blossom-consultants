@@ -1,3 +1,8 @@
+import bookCovers from "@/public/images/little-seed-mighty-tree-book.webp";
+import drLunarOdawa from "@/public/images/dr-lunar-odawa.webp";
+import playroom from "@/public/images/child-therapy-playroom.webp";
+import therapyRoom from "@/public/images/therapy-room.webp";
+
 export const siteUrl = "https://blossomconsultants.co.ke";
 
 // WhatsApp number in international format, digits only.
@@ -17,11 +22,13 @@ export const contact = {
     { label: "0716 374 566", href: "tel:+254716374566" },
     { label: "0735 339 980", href: "tel:+254735339980" },
   ],
+  teletherapy: { label: "0720149568", href: "tel:+254720149568" },
 };
 
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "For Children", href: "#children" },
   { label: "For Organizations", href: "#organizations" },
   { label: "Contact", href: "#contact" },
 ];
@@ -31,8 +38,35 @@ const unsplash = (id: string) =>
 
 export const images = {
   hero: unsplash("photo-1573496359142-b8d87734a5a2"),
-  about: unsplash("photo-1600607687920-4e2a09cf159d"),
+  about: therapyRoom,
   corporate: unsplash("photo-1521737711867-e3b97375f902"),
+};
+
+export const childTherapy = {
+  // TODO: confirm the age range with Dr. Odawa before launch.
+  ageRange: "ages 3 to 17",
+  playroom,
+  points: [
+    "Play-based, child-friendly therapy",
+    "Parents involved along the way",
+    "Assessments for learning and special needs",
+    "In-person and virtual sessions",
+  ],
+};
+
+export const childTherapist = {
+  name: "Dr. Lunar Odawa",
+  title: "Clinical Psychologist & Child Therapist",
+  photo: drLunarOdawa,
+  bio: [
+    "Dr. Lunar Odawa is a clinical psychologist who has made children and families the heart of her practice. In her sessions, children are given the time and space to make sense of big feelings, build confidence and find their voice, with parents involved along the way.",
+    "She sees clients in person at our Upper Hill office and through virtual sessions. Her children's book, Little Seed, Mighty Tree, grew out of the same belief that guides her work: every child carries the potential to grow tall.",
+  ],
+  book: {
+    title: "Little Seed, Mighty Tree",
+    illustrator: "Kibali Tillas",
+    covers: bookCovers,
+  },
 };
 
 export type ExpertiseShape = "arch" | "diagonal" | "petal";
@@ -107,6 +141,7 @@ export const corporateTopics = [
 
 export const enquiryInterests = [
   "Personal psychotherapy",
+  "Child & adolescent therapy",
   "Psychological assessment",
   "Corporate training",
   "Coaching",

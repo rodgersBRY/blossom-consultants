@@ -1,4 +1,5 @@
 import { About } from "@/components/about";
+import { ChildTherapy } from "@/components/child-therapy";
 import { Contact } from "@/components/contact";
 import { Expertise } from "@/components/expertise";
 import { Hero } from "@/components/hero";
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <Pathways />
         <Expertise />
+        <ChildTherapy />
         <About />
         <Organizations />
         <Contact />

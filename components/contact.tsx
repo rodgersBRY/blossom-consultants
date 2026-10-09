@@ -35,6 +35,13 @@ export function Contact() {
                 </span>
               ))}
             </Detail>
+            {contact.teletherapy && (
+              <Detail icon={Phone} label="Teletherapy">
+                <a href={contact.teletherapy.href} className={link}>
+                  {contact.teletherapy.label}
+                </a>
+              </Detail>
+            )}
             <Detail icon={Mail} label="Email">
               <a href={`mailto:${contact.email}`} className={link}>
                 {contact.email}
