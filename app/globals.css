@@ -71,7 +71,7 @@
   h1,
   h2,
   h3 {
-    @apply font-serif font-medium leading-[1.14] tracking-[-0.025em];
+    @apply font-serif font-medium leading-[1.14] tracking-tight;
   }
   p {
     @apply leading-[1.75];
@@ -84,7 +84,7 @@
 
 @layer components {
   .container-page {
-    @apply mx-auto w-full max-w-[1180px] px-6;
+    @apply mx-auto w-full max-w-295 px-6;
   }
   .section {
     @apply py-[clamp(76px,8vw,122px)];

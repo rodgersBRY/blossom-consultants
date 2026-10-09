@@ -5,10 +5,14 @@ import { useEffect } from "react";
 /** Fades in every [data-reveal] element as it scrolls into view. */
 export function RevealObserver() {
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (reduced || !("IntersectionObserver" in window)) return;
 
-    const items = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const items = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-reveal]"),
+    );
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {

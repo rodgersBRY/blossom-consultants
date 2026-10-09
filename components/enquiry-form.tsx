@@ -18,7 +18,7 @@ export function EnquiryForm() {
     <form
       action={formAction}
       data-reveal
-      className="grid gap-3.5 rounded-xl border border-line bg-white p-[30px]"
+      className="grid gap-3.5 rounded-xl border border-line bg-white p-7.5"
     >
       <div aria-hidden className="hidden">
         <label htmlFor="company">Company</label>
@@ -56,7 +56,7 @@ export function EnquiryForm() {
           required
           defaultValue={state.values?.message}
           placeholder="Please share a brief, non-sensitive description of your enquiry."
-          className={`${field} min-h-[110px] resize-y`}
+          className={`${field} min-h-27.5 resize-y`}
         />
       </div>
       <small className="text-muted">

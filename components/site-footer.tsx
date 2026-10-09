@@ -13,7 +13,9 @@ export async function SiteFooter() {
   return (
     <footer className="border-t-4 border-magenta-600 bg-plum-950 py-8.5 text-[13px] text-[#f3e6ef]">
       <div className="container-page flex flex-wrap justify-between gap-6">
-        <span>© {year} Blossom Psychotherapy Services. All rights reserved.</span>
+        <span>
+          © {year} Blossom Psychotherapy Services. All rights reserved.
+        </span>
         <span>Supporting mental wellness and professional growth.</span>
       </div>
       <div className="container-page mt-5 border-t border-white/10 pt-4 text-xs text-[#cdb3c6]">

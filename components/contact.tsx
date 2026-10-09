@@ -17,8 +17,8 @@ export function Contact() {
             Take the next step with Blossom.
           </h2>
           <p className="mb-6">
-            Whether you&apos;re reaching out for yourself, your family, or your organization, we&apos;d love to
-            hear from you.
+            Whether you&apos;re reaching out for yourself, your family, or your
+            organization, we&apos;d love to hear from you.
           </p>
 
           <dl className="grid gap-4">
