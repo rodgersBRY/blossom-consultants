@@ -45,6 +45,7 @@ export function Expertise() {
                       src={item.image}
                       alt={item.alt}
                       fill
+                      placeholder="blur"
                       sizes="(min-width: 768px) 500px, 100vw"
                       className="object-cover contrast-[1.04] saturate-[.83] transition duration-700 group-hover:scale-[1.025] group-hover:saturate-100"
                     />

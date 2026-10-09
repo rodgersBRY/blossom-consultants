@@ -40,9 +40,10 @@ export function Hero() {
           <div className="relative h-82.5 overflow-hidden rounded-[46%_46%_3%_3%/24%_24%_3%_3%] [clip-path:polygon(0_15%,8%_5%,26%_0,75%_0,100%_25%,100%_100%,0_100%)] sm:h-87.5 md:h-122.5">
             <Image
               src={images.hero}
-              alt="Stock photograph illustrating a welcoming professional consultation"
+              alt="A sunlit lounge with lilies, plants and books titled Heal, Grow, Thrive and Belong"
               fill
               preload
+              placeholder="blur"
               sizes="(min-width: 768px) 45vw, 100vw"
               className="object-cover saturate-[.86]"
             />

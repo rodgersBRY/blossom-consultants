@@ -31,10 +31,11 @@ export function Organizations() {
           <div className="relative h-57.5 overflow-hidden rounded-md border-[3px] border-blush-300 [clip-path:polygon(9%_0,100%_0,100%_82%,91%_100%,0_100%,0_13%)] md:h-61.25">
             <Image
               src={images.corporate}
-              alt="Stock photograph of professionals collaborating"
+              alt="Colleagues shaking hands at the start of a meeting"
               fill
+              placeholder="blur"
               sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover saturate-[.86] transition duration-500 group-hover:scale-[1.018] group-hover:saturate-100"
+              className="object-cover object-[center_30%] saturate-[.86] transition duration-500 group-hover:scale-[1.018] group-hover:saturate-100"
             />
           </div>
           <ul className="flex flex-wrap gap-3">

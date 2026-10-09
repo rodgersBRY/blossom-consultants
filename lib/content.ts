@@ -2,6 +2,14 @@ import bookCovers from "@/public/images/little-seed-mighty-tree-book.webp";
 import drLunarOdawa from "@/public/images/dr-lunar-odawa.webp";
 import playroom from "@/public/images/child-therapy-playroom.webp";
 import therapyRoom from "@/public/images/therapy-room.webp";
+import assessmentClipboard from "@/public/images/assessment-clipboard.webp";
+import corporateTraining from "@/public/images/corporate-training.webp";
+import groupCoaching from "@/public/images/group-coaching.webp";
+import heroLounge from "@/public/images/hero-calm-lounge.webp";
+import partnership from "@/public/images/organizations-partnership.webp";
+import psychotherapySession from "@/public/images/psychotherapy-session.webp";
+import researchTeam from "@/public/images/research-team.webp";
+import type { StaticImageData } from "next/image";
 
 export const siteUrl = "https://blossomconsultants.co.ke";
 
@@ -45,18 +53,13 @@ export const navLinks = [
   { label: "For Organizations", href: "#organizations" },
 ];
 
-const unsplash = (id: string) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200`;
-
 export const images = {
-  hero: unsplash("photo-1573496359142-b8d87734a5a2"),
+  hero: heroLounge,
   about: therapyRoom,
-  corporate: unsplash("photo-1521737711867-e3b97375f902"),
+  corporate: partnership,
 };
 
 export const childTherapy = {
-  // TODO: confirm the age range with Dr. Odawa before launch.
-  ageRange: "ages 3 to 17",
   playroom,
   points: [
     "Play-based, child-friendly therapy",
@@ -87,7 +90,7 @@ export const expertise: {
   kicker: string;
   title: string;
   body: string;
-  image: string;
+  image: StaticImageData;
   alt: string;
   shape: ExpertiseShape;
 }[] = [
@@ -95,40 +98,40 @@ export const expertise: {
     kicker: "Individual wellbeing",
     title: "Psychotherapy & Counselling",
     body: "In-person and virtual psychotherapy for children, adolescents, youth and adults, with care tailored to each stage of life.",
-    image: unsplash("photo-1573496359142-b8d87734a5a2"),
-    alt: "Stock photography: Therapist-inspired professional portrait",
+    image: psychotherapySession,
+    alt: "A therapist taking notes while talking with a client on a sofa",
     shape: "arch",
   },
   {
     kicker: "Understanding & insight",
     title: "Psychological Assessments",
     body: "Standardized assessments spanning personality, emotional intelligence, career guidance, mood, substance use and special needs.",
-    image: unsplash("photo-1576091160399-112ba8d25d1d"),
-    alt: "Stock photography: Professional consultation setting",
+    image: assessmentClipboard,
+    alt: "A clinician reviewing a printed autism screening assessment",
     shape: "diagonal",
   },
   {
     kicker: "Organizational growth",
     title: "Corporate Training & Wellness",
     body: "Practical programmes in mental wellness, teamwork, emotional intelligence, work-life balance and psychological safety.",
-    image: unsplash("photo-1521737711867-e3b97375f902"),
-    alt: "Stock photography: Professionals collaborating in a workplace",
+    image: corporateTraining,
+    alt: "A facilitator presenting a slide to a workshop group",
     shape: "petal",
   },
   {
     kicker: "Personal & professional growth",
     title: "Coaching & Development",
     body: "Individual and group coaching to support personal development, professional growth and meaningful goals.",
-    image: unsplash("photo-1551836022-d5d88e9218df"),
-    alt: "Stock photography: Professionals in a mentoring conversation",
+    image: groupCoaching,
+    alt: "Four women laughing together during a group session on office sofas",
     shape: "diagonal",
   },
   {
     kicker: "Evidence & insight",
     title: "Research",
     body: "Research services that contribute to informed understanding and evidence-based decisions for people and organizations.",
-    image: unsplash("photo-1456324504439-367cee3b3c32"),
-    alt: "Stock photography: Research materials and working environment",
+    image: researchTeam,
+    alt: "A team working through documents at their computers",
     shape: "arch",
   },
 ];
