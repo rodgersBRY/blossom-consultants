@@ -3,7 +3,7 @@ export const siteUrl = "https://blossomconsultants.co.ke";
 // WhatsApp number in international format, digits only.
 const developerWhatsapp = "254712413243";
 const developerMessage =
-  "Hi Brian, I came across the Blossom Psychotherapy Services website and I'm interested in having a website built. Are you available to talk?";
+  "Hi Mawira, I came across the Blossom Psychotherapy Services website and I'm interested in having a website built. Are you available to talk?";
 
 export const developer = {
   name: "Mawira",
