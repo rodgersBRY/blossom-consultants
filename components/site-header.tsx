@@ -40,14 +40,14 @@ export function SiteHeader() {
 
         <div
           id="site-nav"
-          className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-19.5 flex-col items-stretch gap-6 bg-white p-6 text-sm md:static md:flex md:flex-row md:items-center md:bg-transparent md:p-0`}
+          className={`${open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-3 opacity-0"} absolute inset-x-0 top-19.5 flex flex-col items-stretch gap-6 bg-plum-950 p-6 text-sm text-blush-100 shadow-[0_14px_24px_#42133630] transition-[opacity,translate,visibility] duration-300 ease-out md:visible md:static md:translate-y-0 md:flex-row md:items-center md:bg-transparent md:p-0 md:opacity-100 md:shadow-none md:transition-none`}
         >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={close}
-              className="hover:text-magenta-600"
+              className="hover:text-magenta-300 md:text-ink md:hover:text-magenta-600"
             >
               {link.label}
             </a>
