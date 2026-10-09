@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { ArrowUpRight, Flower2 } from "lucide-react";
-import { images } from "@/lib/content";
+import { ArrowRight, ArrowUpRight, Flower2 } from "lucide-react";
+import { childTherapy, images } from "@/lib/content";
 
 export function Hero() {
   return (
@@ -19,8 +19,8 @@ export function Hero() {
             Wellness for the mind. <em className="text-magenta-500 not-italic">Growth for life.</em>
           </h1>
           <p className="max-w-142.5 text-lg text-[#695669]">
-            Compassionate psychological support for individuals and thoughtful development solutions for
-            organizations. Helping people and teams move forward with confidence.
+            Compassionate psychological support for children, families and adults, and thoughtful
+            development solutions for organizations. Helping people and teams move forward with confidence.
           </p>
           <div className="mt-7.5 flex flex-wrap gap-3">
             <a className="btn w-full sm:w-auto" href="#contact">
@@ -30,6 +30,33 @@ export function Hero() {
               Explore Corporate Solutions
             </a>
           </div>
+
+          <a
+            href="#children"
+            className="group mt-8 flex max-w-142.5 items-center gap-4 rounded-[8px_28px_8px_28px] border border-line bg-white p-3 pr-5 shadow-[0_6px_28px_#63214b0f] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_36px_#742a6018]"
+          >
+            <span className="relative size-18 shrink-0 rounded-[4px_24px_4px_24px] overflow-hidden sm:size-20">
+              <Image
+                src={childTherapy.playroom}
+                alt=""
+                fill
+                placeholder="blur"
+                sizes="80px"
+                className="object-cover"
+              />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="eyebrow block">Our specialty</span>
+              <span className="mt-1 block font-serif text-xl text-plum-800 sm:text-2xl">Child &amp; Family Therapy</span>
+              <span className="mt-0.5 block text-sm text-muted">
+                Play-based therapy that helps children make sense of big feelings.
+              </span>
+            </span>
+            <ArrowRight
+              aria-hidden
+              className="size-5 shrink-0 text-magenta-600 transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </a>
         </div>
 
         <div className="relative isolate mx-auto w-full max-w-125 animate-entrance [animation-delay:.16s] md:max-w-none">
