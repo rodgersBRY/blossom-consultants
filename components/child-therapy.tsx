@@ -13,11 +13,15 @@ export function ChildTherapy() {
         <div className="grid items-center gap-8.75 md:grid-cols-2 md:gap-17.5">
           <div>
             <div className="eyebrow" data-reveal>
-              For children &amp; families
+              Our specialty &middot; Children &amp; families
             </div>
             <h2 className="heading-2" data-reveal>
               Little Seed, Mighty Tree
             </h2>
+            <p className="my-4 font-serif text-lg text-plum-800 md:text-xl">
+              Child therapy is one of our core specialties, led by a clinical
+              psychologist who has made children and families her focus.
+            </p>
             <p className="my-4">
               Children don&apos;t always have the words for what they feel. In a
               playroom built for them, they can show us through play, drawing

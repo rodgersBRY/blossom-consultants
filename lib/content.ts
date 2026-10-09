@@ -47,9 +47,9 @@ export const socials = [
 ] as const;
 
 export const navLinks = [
+  { label: "For Children", href: "#children" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "For Children", href: "#children" },
   { label: "For Organizations", href: "#organizations" },
 ];
 
@@ -93,11 +93,23 @@ export const expertise: {
   image: StaticImageData;
   alt: string;
   shape: ExpertiseShape;
+  href?: string;
+  cta?: string;
 }[] = [
+  {
+    kicker: "Our specialty",
+    title: "Child & Adolescent Therapy",
+    body: "Play-based therapy for children and teens facing worry, grief, big changes, behaviour or learning challenges, with parents involved at every step. We also run assessments for learning and special needs.",
+    image: playroom,
+    alt: "Blossom children's playroom with a tree mural, bean bags and toy shelves",
+    shape: "petal",
+    href: "#children",
+    cta: "See how we work with children",
+  },
   {
     kicker: "Individual wellbeing",
     title: "Psychotherapy & Counselling",
-    body: "In-person and virtual psychotherapy for children, adolescents, youth and adults, with care tailored to each stage of life.",
+    body: "In-person and virtual psychotherapy for youth and adults, with care shaped around where you are in life.",
     image: psychotherapySession,
     alt: "A therapist taking notes while talking with a client on a sofa",
     shape: "arch",
@@ -155,8 +167,8 @@ export const corporateTopics = [
 ];
 
 export const enquiryInterests = [
-  "Personal psychotherapy",
   "Child & adolescent therapy",
+  "Personal psychotherapy",
   "Psychological assessment",
   "Corporate training",
   "Coaching",

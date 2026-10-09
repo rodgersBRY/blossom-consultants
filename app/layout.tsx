@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Blossom | Mental Wellness & Professional Growth",
   description:
-    "Blossom Psychotherapy Services offers psychotherapy, psychological assessments, corporate training, coaching and research in Nairobi and virtually.",
+    "Blossom Psychotherapy Services specialises in child and family therapy, and offers psychotherapy, psychological assessments, corporate training, coaching and research in Nairobi and virtually.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

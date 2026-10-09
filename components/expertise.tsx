@@ -73,10 +73,10 @@ export function Expertise() {
                     {item.body}
                   </p>
                   <a
-                    href="#contact"
+                    href={item.href ?? "#contact"}
                     className="inline-flex items-center gap-3.75 border-b border-[#cb71a8] pb-2 font-bold text-[#84276d] transition-all duration-300 hover:gap-5.5 hover:text-[#b52783]"
                   >
-                    Enquire about this service{" "}
+                    {item.cta ?? "Enquire about this service"}{" "}
                     <ArrowUpRight size={16} aria-hidden />
                   </a>
                 </div>
