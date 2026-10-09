@@ -43,7 +43,6 @@ export const navLinks = [
   { label: "Services", href: "#services" },
   { label: "For Children", href: "#children" },
   { label: "For Organizations", href: "#organizations" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const unsplash = (id: string) =>
