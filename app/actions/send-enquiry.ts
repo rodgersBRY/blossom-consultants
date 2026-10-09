@@ -2,6 +2,8 @@
 
 import { Resend } from "resend";
 import { contact, enquiryInterests } from "@/lib/content";
+import { EnquiryAutoReplyEmail } from "@/emails/enquiry-auto-reply";
+import { EnquiryNotificationEmail } from "@/emails/enquiry-notification";
 
 export type EnquiryValues = { name: string; email: string; interest: string; message: string };
 export type EnquiryState = {
@@ -32,6 +34,7 @@ export async function sendEnquiry(_prev: EnquiryState, data: FormData): Promise<
   if (!name || !message || !emailPattern.test(email)) {
     return { status: "error", message: "Please fill in your name, a valid email address and a message.", values };
   }
+  
   if (name.length > limits.name || email.length > limits.email || message.length > limits.message) {
     return { status: "error", message: "Your message is too long. Please shorten it and try again.", values };
   }
@@ -50,6 +53,7 @@ export async function sendEnquiry(_prev: EnquiryState, data: FormData): Promise<
     to: process.env.ENQUIRY_TO_EMAIL || contact.email,
     replyTo: email,
     subject: `Website enquiry: ${interest}`,
+    react: EnquiryNotificationEmail(values),
     text: [`Name: ${name}`, `Email: ${email}`, `Interest: ${interest}`, "", "Message:", message].join("\n"),
   });
   if (error) {
@@ -63,6 +67,7 @@ export async function sendEnquiry(_prev: EnquiryState, data: FormData): Promise<
     to: email,
     replyTo: contact.email,
     subject: "We've received your enquiry",
+    react: EnquiryAutoReplyEmail({ name, interest }),
     text: [
       `Hi ${name},`,
       "",
