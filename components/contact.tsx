@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { contact } from "@/lib/content";
 import { EnquiryForm } from "./enquiry-form";
+import { SocialLinks } from "./social-links";
 
 const link = "hover:text-magenta-500";
 
@@ -48,6 +49,11 @@ export function Contact() {
               </a>
             </Detail>
           </dl>
+
+          <div className="mt-8">
+            <p className="mb-3 font-bold">Follow us</p>
+            <SocialLinks className="text-magenta-700" />
+          </div>
         </div>
 
         <EnquiryForm />

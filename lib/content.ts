@@ -25,6 +25,19 @@ export const contact = {
   teletherapy: { label: "0720149568", href: "tel:+254720149568" },
 };
 
+export const socials = [
+  {
+    network: "instagram",
+    label: "Instagram",
+    href: "https://www.instagram.com/blossompsychotherapyservices/",
+  },
+  {
+    network: "facebook",
+    label: "Facebook",
+    href: "https://www.facebook.com/p/Blossom-Psychotherapy-services-100057573245207/",
+  },
+] as const;
+
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
