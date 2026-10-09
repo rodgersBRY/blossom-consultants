@@ -24,10 +24,9 @@ export function ChildTherapy() {
               and stories instead.
             </p>
             <p className="my-4">
-              We support children and adolescents, {childTherapy.ageRange},
-              through worry, grief, big changes, behaviour and learning
-              challenges. Parents and caregivers stay part of the process, so
-              progress carries on at home.
+              We support children and adolescents through worry, grief, big
+              changes, behaviour and learning challenges. Parents and caregivers
+              stay part of the process, so progress carries on at home.
             </p>
             <ul className="my-4">
               {childTherapy.points.map((point) => (
