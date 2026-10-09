@@ -1,26 +1,159 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Brand palette sampled from the Blossom logo: fuchsia, magenta and purple. */
+@theme {
+  --color-plum-950: #48163f;
+  --color-plum-900: #5e2059;
+  --color-plum-800: #69205f;
+  --color-plum-700: #922579;
+  --color-magenta-700: #a22a87;
+  --color-magenta-600: #c73391;
+  --color-magenta-500: #d72c8a;
+  --color-magenta-400: #d963a8;
+  --color-magenta-300: #ed9bc6;
+  --color-brand-pink: #e82b8e;
+  --color-brand-purple: #8b248e;
+  --color-blush-50: #fffafc;
+  --color-blush-100: #fdf0f7;
+  --color-blush-200: #f9dfed;
+  --color-blush-300: #f6c6e2;
+  --color-line: #efdce8;
+  --color-ink: #39243a;
+  --color-muted: #766474;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-entrance: entrance 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-glow: glow 10s ease-in-out infinite;
+
+  @keyframes entrance {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+      transform: translateY(-11px) rotate(5deg);
+    }
+  }
+  @keyframes glow {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.06);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+  }
+  body {
+    @apply bg-blush-50 font-sans text-base leading-[1.65] text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-serif font-medium leading-[1.14] tracking-[-0.025em];
+  }
+  p {
+    @apply leading-[1.75];
+  }
+  :focus-visible {
+    outline: 3px solid #bd4b98;
+    outline-offset: 4px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1180px] px-6;
+  }
+  .section {
+    @apply py-[clamp(76px,8vw,122px)];
+  }
+  .eyebrow {
+    @apply text-xs font-bold tracking-[0.16em] text-magenta-700 uppercase;
+  }
+  .heading-2 {
+    @apply mt-3 mb-5 text-[clamp(34px,3.4vw,49px)];
+  }
+
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-magenta-700 px-6 py-3.5 text-sm font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-magenta-500 hover:shadow-[0_9px_22px_#8c246b2a] active:translate-y-0 active:scale-[0.98];
+  }
+  .btn-outline {
+    @apply border border-magenta-700 bg-transparent text-plum-700 hover:text-white;
+  }
+  .btn-light {
+    @apply bg-white text-plum-700 hover:bg-blush-100;
+  }
+
+  /* Organic photo shapes. Each has a matching offset outline frame behind it. */
+  .shape-arch {
+    border-radius: 48% 48% 8px 8px / 30% 30% 8px 8px;
+  }
+  .shape-diagonal {
+    clip-path: polygon(13% 0, 100% 0, 100% 84%, 87% 100%, 0 100%, 0 14%);
+  }
+  .shape-petal {
+    border-radius: 42% 7% 42% 7% / 38% 8% 38% 8%;
+  }
+  .shape-leaf {
+    border-radius: 7px 90px 7px 90px;
+  }
+  .photo-frame {
+    @apply pointer-events-none absolute inset-[15px_-13px_-13px_15px] -z-10 border-[1.5px] border-magenta-400;
+  }
+}
+
+/* Scroll reveal. Hidden state applies only after RevealObserver adds .motion-enabled,
+   so content stays visible without JS or with reduced motion. */
+.motion-enabled [data-reveal] {
+  opacity: 0;
+  translate: 0 32px;
+  transition:
+    opacity 0.75s ease,
+    translate 0.75s cubic-bezier(0.18, 0.65, 0.25, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.motion-enabled [data-reveal="left"] {
+  translate: -34px 0;
+}
+.motion-enabled [data-reveal="right"] {
+  translate: 34px 0;
+}
+.motion-enabled [data-reveal].is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
